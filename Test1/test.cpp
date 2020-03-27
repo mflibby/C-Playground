@@ -2,6 +2,8 @@
 
 #include <iostream>
 
+using namespace std;
+
 class Factorial {
   public:
 
@@ -17,7 +19,10 @@ class Factorial {
 int main() {
   Factorial myfact;
   int n;
+  int m {4};
+  double y {m*n};
   std::cin >> n;
-  std::cout << myfact.factorial(n );
+  std::cout << myfact.factorial(n ) << endl;
+  cout << y;
     return 0;
 }
