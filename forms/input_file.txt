@@ -1,0 +1,4 @@
+My name is \name,
+I would like to say \message!
+Again, my name is \name.
+On this line, \message2!

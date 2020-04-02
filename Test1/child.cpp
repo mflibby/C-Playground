@@ -11,6 +11,9 @@ int main(){
   ofstream outfile;
   outfile.open("myfile.txt");
   outfile << line.vec() << endl;
+  outfile.close();
+
+
 
   return 0;
 }
