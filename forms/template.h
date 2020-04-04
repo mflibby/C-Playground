@@ -11,24 +11,7 @@ struct tag{
   string tag_name;
 };
 
-// class Tags{
-//     ifstream infile("tags.txt");
-//     int count = 0;
-//     string line;
-//     while (getline(infile,line)){
-//       count ++;
-//     }
-//   public:
-//     tag tag_list[count];
-//     count = 0;
-//     while (getline(infile,line)){
-//       tag_list[count] = {count,line};
-//       count++;
-//     }
-//     infile.close()
-//
-//
-// };
+
 
 int findCount(string FileName, string ext){
   ifstream infile(FileName+ext);
@@ -99,4 +82,14 @@ string input(string arg){
 
 void writeln(ofstream& file, string line){
       file << line << endl;
+}
+
+void debug_str_info(string strng, string header, bool debug_on, bool write_to_log, ofstream& log){
+  string debug_string = header + (string)typeid(strng).name() + " " + strng  ;
+  if (debug_on){
+    cout <<  debug_string <<  endl;
+  }
+  if (write_to_log){
+    writeln(log, debug_string);
+  }
 }

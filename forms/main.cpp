@@ -9,6 +9,11 @@ using namespace std;
 int main(){
   int mynum[3] = {1,2,3};
   int start, end, index;
+  bool debug = true;
+  ofstream log;
+  if (debug == true){
+    log.open("debug_log.txt");
+  }
   ifstream infile;
   int count = findCount("tags", ".txt");
   tag tag_list[count];
@@ -20,7 +25,8 @@ int main(){
   string line;
   //string word;
   string info[3] = {"Krasten", "\"Some of these\"", "\"Go Fuck Yourself\""};
-  string name = "Krasten";
+  std::string name = "Krasten";
+  cout << typeid(name).name() << endl;
   string message = "Some of these";
   string new_word;
   string mytag;
@@ -30,11 +36,15 @@ int main(){
       if (line[i] == '\\'){
         start = i;
         string word = obtain_word(line,i);
-        print("Word in line: " + word + "\n");
+        //cout << "Word in line: " << typeid(word).name()<< " " <<  word << "\n";
+        debug_str_info(word, "Word in line: ", 1, 1, log);
         for (int j = 0; j<count; j++){
-          print("Tag: " + tag_list[j].tag_name.length +"\n");
-          mytag = tag_list[j].tag_name;
-          cout << (word == mytag)<< "\n";
+          mytag = (string)tag_list[j].tag_name;
+          //cout << "Tag: " << typeid(tag_list[j].tag_name).name()<< " " << mytag << "\n";
+          debug_str_info(tag_list[j].tag_name, "Tag: ", 1, 1, log);
+          cout << (mytag.compare(word))<< "\n";
+        //  cout << mytag-word << "\n";
+          cout << "Line :" << typeid(line).name() << " " << line << "\n";
         if (tag_list[j].tag_name == word){
             new_word = info[j];
             index = j;
