@@ -24,7 +24,7 @@ int main(){
   print("passed \n");
   string line;
   //string word;
-  string info[3] = {"Krasten", "\"Some of these\"", "\"Go Fuck Yourself\""};
+  string info[3] = {"Krasten", "\"Some of these\"", "\"Go!\""};
   std::string name = "Krasten";
   cout << typeid(name).name() << endl;
   string message = "Some of these";
